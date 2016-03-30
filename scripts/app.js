@@ -9,9 +9,12 @@ angular.module("pelisBabel", ["ngRoute", "URL"]).config(
 			templateUrl: 'views/MoviesList.html'
 		}).when(paths.newMovie, {
             templateUrl: 'views/NewMovie.html',
+        }).when(paths.myMovies, {
+            templateUrl: 'views/MyMoviesList.html',
+        }).when(paths.myRentedMovies, {
+            templateUrl: 'views/MyRentedList.html',
         }).when(paths.movieDetail, {
-            controller: 'MovieDetailController',
-            templateUrl: 'views/MediaItemDetail.html',
+            templateUrl: 'views/MovieDetail.html',
         }).when(paths.home, {
             redirectTo: paths.login
         }).otherwise({

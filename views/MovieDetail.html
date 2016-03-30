@@ -1,0 +1,17 @@
+<div class="container" ng-controller="MovieDetailController">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="thumbnail">
+            <img src="{{model.poster_url}}" alt="">
+            <div class="caption">
+                <h4 class="text-center">{{model.title}}</h4>
+                <p>
+                    {{model.overview}}
+                </p>
+                <video 	controls>
+                    <source src="{{model.video_url}}" type="video/m4v">
+                    <source src="movie.ogg" type="video/ogg"> Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,10 +3,13 @@ angular.module("pelisBabel").controller('MoviesListController', ['$scope', "APIC
 	// Scope init
 	$scope.model = [];
 
+    $scope.uiState = 'loading';
+
 	APIClient.getMovies().then(
         // promesa resuelta
         function(data) {
         	$scope.model = data;
+        	console.log(data);
             if ($scope.model.length == 0) {
                 $scope.uiState = 'blank';
             } else {
