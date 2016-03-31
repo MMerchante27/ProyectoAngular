@@ -7,8 +7,7 @@
                 <p>
                     {{::model.overview}}
                 </p>
-                <video 	controls>
-                    <source ng-src="{{model.video_url}}" type="video/m4v">
+                <video controls ng-src="{{::trustSrc(model.video_url)}}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>

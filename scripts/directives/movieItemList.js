@@ -6,6 +6,7 @@ angular.module("pelisBabel").directive('movieItemList', function(){
 		// terminal: true,
 		 scope: {
 		 	model: "=model",
+		 	isTheUser: "&",
 		 	// Para pasar métodos:
 		 	//Tendré que poner el código a ejecutar cuando en la directiva yo llame al getDetailUrl
 		 }, // {} = isolate, true = child, false/undefined = no change
@@ -14,12 +15,10 @@ angular.module("pelisBabel").directive('movieItemList', function(){
 		// restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
 		restrict: "AE",
 		// template: '',
-		templateUrl: 'views/MovieItem.html'
+		templateUrl: 'views/MovieItem.html',
 		// replace: true,
 		// transclude: true,
 		// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-		//link: function($scope, iElm, iAttrs, controller) {
-			
-		//}
+
 	};
 });

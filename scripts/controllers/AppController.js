@@ -9,8 +9,6 @@ angular.module("pelisBabel").controller("AppController", ["$scope", "$location",
         controller.titles[paths.myMovies] = "My Movies";
         controller.titles[paths.logout] = "Logout";
 
-
-
         // Model init
         $scope.model = { //Representación modelo
             title: ""
@@ -24,7 +22,5 @@ angular.module("pelisBabel").controller("AppController", ["$scope", "$location",
         $scope.$on("ChangeTitle", function(evt, title) {
             $scope.model.title = title;
         });
-
-        
     }
 ]);

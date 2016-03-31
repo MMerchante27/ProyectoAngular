@@ -8,6 +8,6 @@
     </div>
     <div ng-include="views/ProgressBar.html" ng-show="uiState=='loading'"></div>
     <div class="row">
-        <movie-item-list model="model" ng-show="uiState=='ideal'"></movie-item-list>
+        <movie-item-list is-the-user="isTheUser(stuff)" model="model" ng-show="uiState=='ideal'"></movie-item-list>
     </div>
 </div>

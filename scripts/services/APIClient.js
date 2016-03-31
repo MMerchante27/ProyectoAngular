@@ -48,6 +48,20 @@ angular.module("pelisBabel").service("APIClient",
 			// devolver la promesa
 			return deferred.promise;
 		}
+		
+		this.modifyMovie = function(movie){
+			var deferred = $q.defer();
+			$http.put(apiPaths.movies, movie).then(
+				function(response){
+					deferred.resolve(response.data);
+				},
+				function(response){
+					deferred.reject(response.data);
+				}
+
+			)
+			return deferred.promise;
+		}
 
 }]
 
