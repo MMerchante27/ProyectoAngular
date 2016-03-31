@@ -9,7 +9,6 @@ angular.module("pelisBabel").controller('MoviesListController', ['$scope', "APIC
         // promesa resuelta
         function(data) {
         	$scope.model = data;
-        	console.log(data);
             if ($scope.model.length == 0) {
                 $scope.uiState = 'blank';
             } else {

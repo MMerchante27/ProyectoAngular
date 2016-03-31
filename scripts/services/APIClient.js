@@ -48,6 +48,7 @@ angular.module("pelisBabel").service("APIClient",
 			// devolver la promesa
 			return deferred.promise;
 		}
+		
 
 }]
 

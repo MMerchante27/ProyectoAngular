@@ -1,5 +1,5 @@
-angular.module("pelisBabel").controller("AppController", ["$scope", "$location", "paths",
-    function($scope, $location, paths) {
+angular.module("pelisBabel").controller("AppController", ["$scope", "$location", "paths", "authService",
+    function($scope, $location, paths, authService) {
         var controller = this;
         //Controller properties
         controller.titles = {};
@@ -16,15 +16,20 @@ angular.module("pelisBabel").controller("AppController", ["$scope", "$location",
             title: ""
         };
 
+
+        console.log($scope.currentUser);
         //Scope event listeners
         $scope.$on("$locationChangeSuccess", function(evt, currentRoute) { //.$on capturar evento 
-            $scope.model.title = controller.titles[$location.path()] || "404 Not Found";
+            if (authService.getUserAuth()) {
+                $scope.model.title = controller.titles[$location.path()] || "404 Not Found";
+            }
+            else $location.path(paths.login);
         });
 
         $scope.$on("ChangeTitle", function(evt, title) {
             $scope.model.title = title;
         });
 
-        
+
     }
 ]);
