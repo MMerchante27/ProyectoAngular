@@ -4,9 +4,10 @@ angular.module("pelisBabel").controller("AppController", ["$scope", "$location",
         //Controller properties
         controller.titles = {};
         controller.titles[paths.login] = "Login";
-
         controller.titles[paths.movies] = "Movies List";
         controller.titles[paths.newMovie] = "New Movie";
+        controller.titles[paths.myMovies] = "My Movies";
+        controller.titles[paths.logout] = "Logout";
 
 
 
@@ -23,5 +24,7 @@ angular.module("pelisBabel").controller("AppController", ["$scope", "$location",
         $scope.$on("ChangeTitle", function(evt, title) {
             $scope.model.title = title;
         });
+
+        
     }
 ]);

@@ -9,6 +9,8 @@ angular.module("pelisBabel", ["ngRoute", "URL"]).config(
 			templateUrl: 'views/MoviesList.html'
 		}).when(paths.newMovie, {
             templateUrl: 'views/NewMovie.html',
+        }).when(paths.myMovies, {
+            templateUrl: 'views/MyMoviesList.html',
         }).when(paths.movieDetail, {
             controller: 'MovieDetailController',
             templateUrl: 'views/MediaItemDetail.html',
