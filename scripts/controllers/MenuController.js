@@ -3,7 +3,7 @@ angular.module("pelisBabel").controller("MenuController", ["$scope", "$location"
 
         //Scope init
         $scope.model = {
-            selectedItem: paths.movies
+            selectedItem: paths.login
         };
 
         $scope.userState = "no-logged";

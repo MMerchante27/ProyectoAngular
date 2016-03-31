@@ -14,11 +14,13 @@ angular.module("pelisBabel").controller("AppController", ["$scope", "$location",
             title: ""
         };
 
+        $scope.userAuth = "";
+        authService.logoutUser();
 
-        console.log($scope.currentUser);
         //Scope event listeners
         $scope.$on("$locationChangeSuccess", function(evt, currentRoute) { //.$on capturar evento 
-            if (authService.getUserAuth()) {
+            $scope.userAuth = authService.getUserAuth();
+            if ($scope.userAuth) {
                 $scope.model.title = controller.titles[$location.path()] || "404 Not Found";
             }
             else $location.path(paths.login);
