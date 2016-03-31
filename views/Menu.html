@@ -13,18 +13,21 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  
-                    <li ng-class="getClassForItem(paths.login)">
+                    <li ng-class="getClassForItem(paths.movies)">
+                        <a href="#{{::paths.movies}}">Movies</a>
+                    </li>
+                    <li ng-class="getClassForItem(paths.newMovie)">
+                        <a href="#{{::paths.newMovie}}">Add Movie</a>
+                    </li>
+                    <li ng-class="getClassForItem(paths.myMovies)">
+                        <a href="#{{::paths.myMovies}}">My Movies</a>
+                    </li>
+                
+                    <li ng-class="getClassForItem(paths.login)" ng-show="userState == 'no-logged'">
                         <a href="#{{::paths.login}}">Login</a>
                     </li>
-                     <li ng-class="getClassForItem(paths.movies)">
-                        <a href="#{{::paths.movies}}">Login</a>
-                    </li>
-                     <li ng-class="getClassForItem(paths.newMovie)">
-                        <a href="#{{::paths.newMovie}}">Login</a>
-                    </li>
-                    <li ng-class="getClassForItem(paths.movieDetail)">
-                        <a href="#{{::paths.movieDetail}}">Login</a>
+                    <li ng-class="getClassForItem(paths.logout)" ng-show="userState == 'logged'">
+                        <a href="#{{::paths.logout}}">Logout</a>
                     </li>
                 </ul>
             </div>

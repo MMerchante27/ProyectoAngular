@@ -1,13 +1,14 @@
-
 // Defino el módulo "moviedb"
 angular.module("pelisBabel", ["ngRoute", "URL"]).config(
     ["$routeProvider", "paths", function($routeProvider, paths) {
         // Configuro las URLs de la aplicación
         $routeProvider.when(paths.login, {
             templateUrl: 'views/Login.html'
+        }).when(paths.logout, {
+            templateUrl: 'views/Logout.html'
         }).when(paths.movies, {
-			templateUrl: 'views/MoviesList.html'
-		}).when(paths.newMovie, {
+            templateUrl: 'views/MoviesList.html'
+        }).when(paths.newMovie, {
             templateUrl: 'views/NewMovie.html',
         }).when(paths.myMovies, {
             templateUrl: 'views/MyMoviesList.html',
@@ -21,4 +22,4 @@ angular.module("pelisBabel", ["ngRoute", "URL"]).config(
             templateUrl: 'views/404.html'
         })
     }]
-);	
+);
