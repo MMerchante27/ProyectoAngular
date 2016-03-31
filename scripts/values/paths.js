@@ -1,9 +1,11 @@
 angular.module("pelisBabel").constant("paths", {
-    home:"/",
+    home: "/",
     login: "/login",
+    logout: "/logout",
     movies: "/movies",
     myMovies: "/movies/myMovies",
-    newMovie:"/movies/new",
+    myRentedMovies: "/movies/myRentedMovies",
+    newMovie: "/movies/new",
     movieDetail: "/movies/:id",
     notFound: "/sorry"
 });

@@ -1,34 +1,13 @@
 <div class="container" ng-controller="MoviesListController">
-	<h1>Lista de las películas</h1>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="thumbnail" ng-repeat="data in model">
-                <img src="{{::data.poster_url}}}" alt="">
-                <div class="caption">
-                    <h4 class="text-center">{{::data.title}}</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquam, augue vitae pulvinar feugiat, magna ipsum varius tellus, quis lobortis est nulla nec ligula. Aenean cursus enim sit amet tortor rutrum lobortis. Vestibulum mattis mauris fringilla mauris volutpat, in euismod arcu ultricies. Nunc eget hendrerit lectus. Proin rutrum elit ut orci fringilla, sit amet ornare turpis molestie. Proin nec neque eget nulla scelerisque rhoncus sit amet vitae augue. Vivamus ipsum eros, sodales sed enim ac, malesuada iaculis mi. Morbi ut orci sit amet tellus posuere convallis. Cras rhoncus tincidunt ultrices.
-                    </p>
-                    <p class="text-right">
-                        <button class="btn btn-default">Alquilar</button>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/600x270" alt="">
-                    <div class="caption">
-                        <h4 class="text-center">Article 1</h4>
-                        <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquam, augue vitae pulvinar feugiat, magna ipsum varius tellus, quis lobortis est nulla nec ligula. Aenean cursus enim sit amet tortor rutrum lobortis. Vestibulum mattis mauris fringilla mauris volutpat, in euismod arcu ultricies. Nunc eget hendrerit lectus. Proin rutrum elit ut orci fringilla, sit amet ornare turpis molestie. Proin nec neque eget nulla scelerisque rhoncus sit amet vitae augue. Vivamus ipsum eros, sodales sed enim ac, malesuada iaculis mi. Morbi ut orci sit amet tellus posuere convallis. Cras rhoncus tincidunt ultrices.
-                    </p>
-                        <p class="text-right">
-                        <button class="btn btn-default">Alquilar</button>
-                    </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <h1>Movies List</h1>
+    <div class="alert alert-danger" ng-show="uiState=='error'">
+        Error while loading data
     </div>
+    <div class="jumbotron" ng-show="uiState=='blank'">
+        <p class="lead">There is no movies!</p>
+    </div>
+    <div ng-include="views/ProgressBar.html" ng-show="uiState=='loading'"></div>
+    <div class="row">
+        <movie-item-list model="model" ng-show="uiState=='ideal'"></movie-item-list>
+    </div>
+</div>
