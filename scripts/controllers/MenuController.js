@@ -1,5 +1,5 @@
 angular.module("pelisBabel").controller("MenuController", ["$scope", "$location", "$rootScope", "paths", "logService",
-    function($scope, $location,  $rootScope, paths, logService) {
+    function($scope, $location, $rootScope, paths, logService) {
 
         //Scope init
         $scope.model = {
@@ -27,25 +27,15 @@ angular.module("pelisBabel").controller("MenuController", ["$scope", "$location"
             $scope.model.selectedItem = $location.path();
         });
 
-        // $rootScope.$broadcast('rootScope:broadcast', 'Broadcast'); // $rootScope.$on && $scope.$on
+        logService.subscribeLogin($scope, function somethingChanged() {
 
-        logService.subscribe($scope, function somethingChanged() {
             $scope.userState = "logged";
         });
 
-
-        //Segunda manera
-        // var onEditLogHandler = function(state){
-        //     console.log("hola");
-        //     $scope.userState = state;
-        // }
-
-        // logService.onEditLog($scope, onEditLogHandler);
-
-        // $scope.onSave = function(state){
-        //     logService.onSave(state);
-        // }
-        // $scope
+        logService.subscribeLogout($scope, function somethingChanged() {
+            
+            $scope.userState = "no-logged";
+        });
 
 
     }
