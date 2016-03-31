@@ -15,7 +15,6 @@ angular.module("pelisBabel").controller("AppController", ["$scope", "$location",
         };
 
 
-        console.log($scope.currentUser);
         //Scope event listeners
         $scope.$on("$locationChangeSuccess", function(evt, currentRoute) { //.$on capturar evento 
             if (authService.getUserAuth()) {

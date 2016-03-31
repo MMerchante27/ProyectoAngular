@@ -58,12 +58,9 @@ angular.module("pelisBabel").service("APIClient",
 				function(response){
 					deferred.reject(response.data);
 				}
-
 			)
 			return deferred.promise;
 		}
-
-
 }]
 
 );

@@ -1,8 +1,8 @@
-angular.module("pelisBabel").controller('MoviesListController', ['$scope', "paths", "$location", "APIClient", "$sce", function($scope, paths, $location, APIClient, $sce){
+angular.module("pelisBabel").controller('MoviesListController', ['$scope', "paths", "$location", "APIClient", "$sce", "authService", "modificarAlquiler", function($scope, paths, $location, APIClient, $sce, authService, modificarAlquiler){
 	
-    var usuarioAutenticado = "Pepe2";
+    var usuarioAutenticado = authService.getUserAuth();
 
-      $scope.trustSrc = function(src) {
+    $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl(src);
     }
 
@@ -36,24 +36,8 @@ angular.module("pelisBabel").controller('MoviesListController', ['$scope', "path
         }
     }
 
-    $scope.changeRented = function(movie, bool){
-        console.log("PASO POR AQUI");
-        if(bool == true){
-            movie.rent_user = usuarioAutenticado;
-            //lo que quiero es cambiar el "rented" por el usuario que está autenticado y ha dado al botón
-        }
-        else{
-            movie.rent_user = "";
-            //lo que quiero es quitar que "rented_user" es ""
-        }
-        APIClient.modifyMovie(movie).then(
-            function(data){
-                $location.url(paths.movies);
-            },
-            function(data){
-                $scope.uiState = "error";
-            }
-        )
+    $scope.alquilar = function(movie){
+        modificarAlquiler.changeRented(movie, true);
     }
 
     $scope.verPeli = function (movie){

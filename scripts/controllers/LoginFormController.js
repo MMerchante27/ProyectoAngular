@@ -7,7 +7,6 @@ angular.module("pelisBabel").controller('LoginFormController', ['$scope', "$loca
         $scope.credentials = {
             user: '',
             password: ''
-
         };
 
         //Scope methods
