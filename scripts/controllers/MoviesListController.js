@@ -1,16 +1,19 @@
-angular.module("pelisBabel").controller('MoviesListController', ['$scope',"$filter", "paths", "$location", "APIClient", "$sce", "authService", "modificarAlquiler",
-    function($scope,$filter, paths, $location, APIClient, $sce, authService, modificarAlquiler) {
-
-        $scope.uiState = 'loading';
+angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPaths', '$scope', "paths", "$location", "APIClient", "$sce", "authService", "modificarAlquiler",
+    function(URL, apiPaths, $scope, paths, $location, APIClient, $sce, authService, modificarAlquiler) {
 
         var usuarioAutenticado = authService.getUserAuth();
+        $scope.uiState = 'loading';
+
+        $scope.model.table = 'false';
+
+
+        // Scope init
+        $scope.model = [];
 
         $scope.trustSrc = function(src) {
             return $sce.trustAsResourceUrl(src);
         }
 
-        // Scope init
-        $scope.model = [];
 
 
         APIClient.getMovies().then(
@@ -28,6 +31,18 @@ angular.module("pelisBabel").controller('MoviesListController', ['$scope',"$filt
                 $scope.uiState = "error";
             }
         )
+
+
+        $scope.desalquilar = function(movie) {
+            var url = URL.resolve(paths.movieDetail, { id: movie.id });
+            if (movie.create_user == usuarioAutenticado) {
+                $location.path(url);
+            } else {
+                modificarAlquiler.changeRented(movie, false);
+                $location.path(url);
+            }
+        }
+
 
         $scope.isTheUser = function(usuarioAComprobar) {
             if (usuarioAComprobar == usuarioAutenticado) {
@@ -56,6 +71,19 @@ angular.module("pelisBabel").controller('MoviesListController', ['$scope',"$filt
                 }
             )
         }
+
+        $scope.alquilar = function(movie) {
+            modificarAlquiler.changeRented(movie, true);
+        }
+
+        $scope.verPeli = function(movie) {
+            var url = URL.resolve(paths.movieDetail, { id: movie.id });
+            $location.path(url);
+        }
+
+        $scope.gridTable = function() {
+            $scope.table = "true";
+        } >>> >>> > 24838e bfb1ff8c868abec6cce64a094433c911bf
 
         $scope.alquilar = function(movie) {
             var date = new Date();

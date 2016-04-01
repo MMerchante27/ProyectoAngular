@@ -54,7 +54,10 @@ angular.module("pelisBabel").service("APIClient",
 		
 		this.modifyMovie = function(movie){
 			var deferred = $q.defer();
-			$http.put(apiPaths.movies, movie).then(
+
+			var url = URL.resolve(apiPaths.movieDetail, {id: movie.id});
+
+			$http.put(url, movie).then(
 				function(response){
 					deferred.resolve(response.data);
 				},
