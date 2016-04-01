@@ -83,7 +83,7 @@ angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPath
 
         $scope.gridTable = function() {
             $scope.table = "true";
-        } >>> >>> > 24838e bfb1ff8c868abec6cce64a094433c911bf
+        }
 
         $scope.alquilar = function(movie) {
             var date = new Date();
