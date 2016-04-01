@@ -2,10 +2,11 @@
     "id": 2,
     "title": "Batman v Superman: El Amanecer de la Justicia",
     "poster_url": "https://image.tmdb.org/t/p/w185/6bCplVkhowCjTHXWv49UjRPn0eK.jpg",
-    "video_url" : "",
-    "create_date": "",
+    "video_url" : "http://movietrailers.apple.com/movies/wb/thelegobatmanmovie/thelegobatmanmovie-tlr2_i320.m4v",
+    "create_date": "2016/04/30",
     "rent_date": "",
     "create_user": "Pepe1",
-    "rent_user": "Pepe2",
-    "overview": "Después de la titánica batalla contra el General Zod, Metrópolis fue reducida casi a escombros y Superman es la figura más controvertida del mundo. Mientras para muchos es todavía un símbolo de esperanza, un número creciente de personas lo consideran una amenaza para la humanidad y buscan justicia por el caos que ha traído a la Tierra. Por lo que respecta a Bruce Wayne, Superman es claramente un peligro para la sociedad. Tiene miedo por el futuro del mundo con semejante poder sin nadie que lo controle, y por ese motivo se enfunda la capucha y la capa para poner freno a Superman. La rivalidad entre ellos es furiosa, movida por la amargura y la venganza, y nada puede disuadirlos de entrar en guerra. Sin embargo, una nueva y oscura amenaza emerge en la forma de un tercer hombre: uno con un poder mayor que el de cualquier de ellos para poner al mundo en peligro y causar la total destrucción"
+    "rent_user": "",
+    "overview": "Después de la titánica batalla contra el General Zod, Metrópolis fue reducida casi a escombros y Superman es la figura más controvertida del mundo. Mientras para muchos es todavía un símbolo de esperanza, un número creciente de personas lo consideran una amenaza para la humanidad y buscan justicia por el caos que ha traído a la Tierra. Por lo que respecta a Bruce Wayne, Superman es claramente un peligro para la sociedad. Tiene miedo por el futuro del mundo con semejante poder sin nadie que lo controle, y por ese motivo se enfunda la capucha y la capa para poner freno a Superman."
+
 }

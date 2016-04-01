@@ -1,12 +1,12 @@
 {
     "id": 3,
-    "title": "Deadpool",
+    "title": "Star Wars: El despertar de la fuerza",
     "poster_url": "https://image.tmdb.org/t/p/w185/xHfhQIK4BNlsGv5Ylx8mVq0hJT1.jpg",
-    "video_url" : "",
-    "create_date": "",
+    "video_url" : "http://movietrailers.apple.com/movies/wb/thelegobatmanmovie/thelegobatmanmovie-tlr2_i320.m4v",
+    "create_date": "2016/04/30",
     "rent_date": "",
     "create_user": "Pepe2",
-    "rent_user": "Pepe2",
-    "overview": "Based upon Marvel Comics’ most unconventional anti-hero, DEADPOOL tells the origin story of former Special Forces operative turned mercenary Wade Wilson, who after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life.",
-    "categories": ["Animation", "Adventure", "Action", "Comedy"]
+    "rent_user": "",
+    "overview": "Treinta años después de la victoria de la Alianza Rebelde sobre la segunda Estrella de la Muerte (hechos narrados en el Episodio VI: El retorno del Jedi), la galaxia está todavía en guerra. Una nueva República se ha constituido, pero una siniestra organización, la Primera Orden, ha resurgido de las cenizas del Imperio Galáctico. A los héroes de antaño, que luchan ahora en la Resistencia, se suman nuevos héroes: Poe Dameron, un piloto de caza, Finn, un desertor de la Primera Orden, Rey, una joven chatarrera, y BB-8, un androide rodante. Todos ellos luchan contra las fuerzas del Mal: el Capitán Phasma, de la Primera Orden, y Kylo Ren, un temible y misterioso personaje que empuña un sable de luz roja.",
+    "categories": ["Animation", "Action", "Sci-Fi"]
 }

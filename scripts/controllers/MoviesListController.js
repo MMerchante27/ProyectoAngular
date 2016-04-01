@@ -1,5 +1,5 @@
-angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPaths', '$scope', "paths", "$location", "APIClient", "$sce", "authService", "modificarAlquiler",
-    function(URL, apiPaths, $scope, paths, $location, APIClient, $sce, authService, modificarAlquiler) {
+angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPaths', '$scope', "$filter", "paths", "$location", "APIClient", "$sce", "authService", "modificarAlquiler",
+    function(URL, apiPaths, $scope, $filter, paths, $location, APIClient, $sce, authService, modificarAlquiler) {
 
         var usuarioAutenticado = authService.getUserAuth();
         $scope.uiState = 'loading';
@@ -72,10 +72,6 @@ angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPath
             )
         }
 
-        $scope.alquilar = function(movie) {
-            modificarAlquiler.changeRented(movie, true);
-        }
-
         $scope.verPeli = function(movie) {
             var url = URL.resolve(paths.movieDetail, { id: movie.id });
             $location.path(url);
@@ -92,9 +88,6 @@ angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPath
             modificarAlquiler.changeRented(movie, true);
         }
 
-        $scope.verPeli = function(movie) {
-            return false;
-        }
 
     }
 ]);
