@@ -77,9 +77,7 @@ angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPath
         }
 
         $scope.gridTable = function() {
-<<<<<<< HEAD
-            $scope.table = "true";
-=======
+
             if($scope.noTable == 'true'){
                 $scope.table = 'true';
                 $scope.noTable = 'false';
@@ -88,7 +86,6 @@ angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPath
                 $scope.table = 'false';
                 $scope.noTable = 'true';
             }
->>>>>>> 2fecd841f173cb857d6e91b57f22275f266fe6d9
         }
 
         $scope.alquilar = function(movie) {
@@ -98,9 +95,5 @@ angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPath
             modificarAlquiler.changeRented(movie, true);
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 2fecd841f173cb857d6e91b57f22275f266fe6d9
     }
 ]);
