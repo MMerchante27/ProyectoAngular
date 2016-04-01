@@ -3,6 +3,8 @@ angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPath
 	
     var usuarioAutenticado = authService.getUserAuth();
 
+    $scope.model.table = 'false';
+
     $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl(src);
     }
@@ -74,6 +76,10 @@ angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPath
     $scope.verPeli = function(movie) {
         var url = URL.resolve(paths.movieDetail, {id: movie.id});
         $location.path(url);
+    }
+    
+    $scope.gridTable = function(){
+        $scope.table = "true";
     }
 
 }]);

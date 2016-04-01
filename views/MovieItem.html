@@ -1,16 +1,18 @@
-<div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="data in model">
-    <div class="thumbnail">
-        <img ng-src="{{::data.poster_url}}" alt="">
-        <div class="caption">
-            <h4 class="text-center">{{::data.title}}</h4>
-            <p>
-                {{::data.overview}}
-            </p>
-            <p class="text-right">
-                <button class="btn btn-success" ng-if="data.rent_user == ''" ng-click="alquilar({stuff: data})">I want it!</button>
-                <button class="btn btn-primary" ng-if="data.rent_user != '' && (isTheUser({stuff : data.rent_user}) == true || isTheUser({stuff: data.create_user}) == true)" ng-click="desalquilar({stuff: data})">Watch it!</button>
-                <button class="btn btn-danger" ng-if="data.rent_user != '' && isTheUser({stuff : data.rent_user}) == false" ng-disabled="true">Rented</button>
-            </p>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="data in model">
+        <div class="thumbnail">
+            <img ng-src="{{::data.poster_url}}" alt="">
+            <div class="caption">
+                <h4 class="text-center">{{::data.title}}</h4>
+                <p>
+                    {{::data.overview}}
+                </p>
+                <p class="text-right">
+                    <button class="btn btn-success" ng-if="data.rent_user == ''" ng-click="alquilar({stuff: data})">I want it!</button>
+                    <button class="btn btn-primary" ng-if="data.rent_user != '' && (isTheUser({stuff : data.rent_user}) == true || isTheUser({stuff: data.create_user}) == true)" ng-click="desalquilar({stuff: data})">Watch it!</button>
+                    <button class="btn btn-danger" ng-if="data.rent_user != '' && isTheUser({stuff : data.rent_user}) == false" ng-disabled="true">Rented</button>
+                </p>
+            </div>
         </div>
     </div>
 </div>
