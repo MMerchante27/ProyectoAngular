@@ -1,8 +1,9 @@
-angular.module("pelisBabel").controller('LogoutController', ['$scope', "$location", "$rootScope", "paths", "logService","authService",
+angular.module("pelisBabel").controller('LogoutController', ['$scope', "$location", "$rootScope", "paths", "logService", "authService",
     function($scope, $location, $rootScope, paths, logService, authService) {
 
         //Scope init
         $scope.model = {};
+        $scope.uiState = 'loading';
 
 
         $scope.exitUser = function() {

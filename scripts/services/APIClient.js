@@ -1,5 +1,5 @@
 angular.module("pelisBabel").service("APIClient", 
-	["$http", "$q", "apiPaths", "URL", function($http, $q, apiPaths, URL){
+	["$http", "$q","$filter", "apiPaths", "URL", function($http, $q,$filter, apiPaths, URL){
 
 		this.apiRequest = function(url){
 			// Crear el objeto diferido
@@ -37,6 +37,9 @@ angular.module("pelisBabel").service("APIClient",
 
 		this.createMovie = function(movie){
 			var deferred = $q.defer();
+			var date = new Date();
+			date = $filter('date')(date, "yyyy/MM/dd");
+			movie.create_date = date;
 			$http.post(apiPaths.movies, movie).then(
 				function(response){
 					deferred.resolve(response.data);

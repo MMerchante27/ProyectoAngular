@@ -7,6 +7,7 @@ angular.module("pelisBabel").controller("MovieDetailController", ["$scope", "$sc
 
     //Controller init
     $scope.$emit("ChangeTitle", "Loading...");
+    
     $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl(src);
     }

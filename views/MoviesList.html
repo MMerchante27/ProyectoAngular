@@ -6,7 +6,7 @@
     <div class="jumbotron" ng-show="uiState=='blank'">
         <p class="lead">There is no movies!</p>
     </div>
-    <div ng-include="views/ProgressBar.html" ng-show="uiState=='loading'"></div>
+    <div ng-include="'views/ProgressBar.html'" ng-show="uiState=='loading'"></div>
     <div class="row">
         <movie-item-list is-the-user="isTheUser(stuff)" alquilar="alquilar(stuff)" model="model" ng-show="uiState=='ideal'"></movie-item-list>
     </div>

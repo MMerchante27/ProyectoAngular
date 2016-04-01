@@ -6,7 +6,7 @@
     <div class="jumbotron" ng-show="uiState=='blank'">
         <p class="lead">There is no movies!</p>
     </div>
-    <div ng-include="views/ProgressBar.html" ng-show="uiState=='loading'"></div>
+    <div ng-include="'views/ProgressBar.html'" ng-show="uiState=='loading'"></div>
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="data in model" ng-if="isTheUser(data.rent_user) == true">
             <div class="thumbnail">

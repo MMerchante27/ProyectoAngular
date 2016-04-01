@@ -3,7 +3,8 @@ angular.module("pelisBabel").controller('LoginFormController', ['$scope', "$loca
 
         //Scope init
         $scope.model = {};
-        
+            $scope.uiState = 'loading';
+
         $scope.credentials = {
             user: '',
             password: ''
