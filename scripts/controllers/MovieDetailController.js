@@ -1,13 +1,16 @@
-angular.module("pelisBabel").controller("MovieDetailController", ["$scope","$sce", "$routeParams", "APIClient", "paths", "$location", function($scope, $sce, $routeParams, APIClient, paths, $location) {
+angular.module("pelisBabel").controller("MovieDetailController", ["$scope", "$sce", "$routeParams", "APIClient", "paths", "$location", function($scope, $sce, $routeParams, APIClient, paths, $location) {
 
     // scope init
-    $scope.uiState = 'loading';
-    $scope.model = {};
 
+    $scope.model = {};
+    $scope.uiState = "loading";
+
+    //Controller init
+    $scope.$emit("ChangeTitle", "Loading...");
     $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl(src);
     }
-    
+
     // controller init
     APIClient.getMovie($routeParams.id).then(
         // Película encontrada

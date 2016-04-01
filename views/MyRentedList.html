@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="data in model" ng-if="isTheUser(data.rent_user) == true">
             <div class="thumbnail">
-                <ng-img src="{{::trustSrc(data.poster_url)}}" alt="">
+                <img ng-src="{{::trustSrc(data.poster_url)}}" alt="">
                 <div class="caption">
                     <h4 class="text-center">{{::data.title}}</h4>
                     <p>

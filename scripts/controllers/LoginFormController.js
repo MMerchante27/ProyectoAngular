@@ -3,7 +3,7 @@ angular.module("pelisBabel").controller('LoginFormController', ['$scope', "$loca
 
         //Scope init
         $scope.model = {};
-
+        
         $scope.credentials = {
             user: '',
             password: ''
