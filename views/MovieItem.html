@@ -7,9 +7,9 @@
                 {{::data.overview}}
             </p>
             <p class="text-right">
-                <button class="btn btn-success" ng-if="isTheUser({stuff : data.rent_user}) == false" submit="changeRented(data, true)">I want it!</button>
- 
-                <button class="btn btn-danger" ng-if="isTheUser({stuff : data.rent_user}) == true">Not available</button>
+                <button class="btn btn-success" ng-if="data.rent_user == ''" ng-click="alquilar({stuff: data})">I want it!</button>
+                <button class="btn btn-primary" ng-if="data.rent_user != '' && isTheUser({stuff : data.rent_user}) == true">Watch it!</button>
+                <button class="btn btn-danger" ng-if="data.rent_user != '' && isTheUser({stuff : data.rent_user}) == false">Not available</button>
             </p>
         </div>
     </div>

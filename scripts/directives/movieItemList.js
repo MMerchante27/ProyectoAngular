@@ -7,6 +7,7 @@ angular.module("pelisBabel").directive('movieItemList', function(){
 		 scope: {
 		 	model: "=model",
 		 	isTheUser: "&",
+		 	alquilar: "&"
 		 	// Para pasar métodos:
 		 	//Tendré que poner el código a ejecutar cuando en la directiva yo llame al getDetailUrl
 		 }, // {} = isolate, true = child, false/undefined = no change

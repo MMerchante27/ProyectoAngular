@@ -13,7 +13,5 @@ angular.module("pelisBabel").service('authService', ["$window",
         	$window.localStorage.removeItem('user');
         }
 
-
-
     }
 ]);

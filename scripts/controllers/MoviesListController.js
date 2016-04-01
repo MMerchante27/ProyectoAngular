@@ -1,6 +1,7 @@
-angular.module("pelisBabel").controller('MoviesListController', ['$scope', "paths", "$location", "APIClient", "$sce", function($scope, paths, $location, APIClient, $sce) {
 
-    var usuarioAutenticado = "Pepe2";
+angular.module("pelisBabel").controller('MoviesListController', ['$scope', "paths", "$location", "APIClient", "$sce", "authService", "modificarAlquiler", function($scope, paths, $location, APIClient, $sce, authService, modificarAlquiler){
+	
+    var usuarioAutenticado = authService.getUserAuth();
 
     $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl(src);
@@ -52,6 +53,9 @@ angular.module("pelisBabel").controller('MoviesListController', ['$scope', "path
                 $scope.uiState = "error";
             }
         )
+
+    $scope.alquilar = function(movie){
+        modificarAlquiler.changeRented(movie, true);
     }
 
     $scope.verPeli = function(movie) {
