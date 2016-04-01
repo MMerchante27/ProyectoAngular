@@ -1,11 +1,11 @@
-angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPaths', '$scope', "paths", "$location", "APIClient", "$sce", "authService", "modificarAlquiler",
-    function(URL, apiPaths, $scope, paths, $location, APIClient, $sce, authService, modificarAlquiler) {
+angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPaths', '$scope', "$filter","paths", "$location", "APIClient", "$sce", "authService", "modificarAlquiler",
+    function(URL, apiPaths, $scope, $filter,paths, $location, APIClient, $sce, authService, modificarAlquiler) {
 
         var usuarioAutenticado = authService.getUserAuth();
         $scope.uiState = 'loading';
 
-        $scope.model.table = 'false';
-
+        $scope.table = 'false';
+        $scope.noTable = 'true';
 
         // Scope init
         $scope.model = [];
@@ -13,8 +13,6 @@ angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPath
         $scope.trustSrc = function(src) {
             return $sce.trustAsResourceUrl(src);
         }
-
-
 
         APIClient.getMovies().then(
             // promesa resuelta
@@ -72,28 +70,27 @@ angular.module("pelisBabel").controller('MoviesListController', ['URL', 'apiPath
             )
         }
 
-        $scope.alquilar = function(movie) {
-            modificarAlquiler.changeRented(movie, true);
-        }
-
         $scope.verPeli = function(movie) {
             var url = URL.resolve(paths.movieDetail, { id: movie.id });
             $location.path(url);
         }
 
         $scope.gridTable = function() {
-            $scope.table = "true";
-        } >>> >>> > 24838e bfb1ff8c868abec6cce64a094433c911bf
+            if($scope.noTable == 'true'){
+                $scope.table = 'true';
+                $scope.noTable = 'false';
+            }
+            else{
+                $scope.table = 'false';
+                $scope.noTable = 'true';
+            }
+        }
 
         $scope.alquilar = function(movie) {
             var date = new Date();
             date = $filter('date')(date, "yyyy/MM/dd");
             movie.rent_date = date;
             modificarAlquiler.changeRented(movie, true);
-        }
-
-        $scope.verPeli = function(movie) {
-            return false;
         }
 
     }

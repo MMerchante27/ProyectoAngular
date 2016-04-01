@@ -8,10 +8,10 @@
                 <p>
                     {{::model.overview}}
                 </p>
-                <video controls ng-src="{{::trustSrc(model.video_url)}}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
             </div>
+            <video class="center-block" controls ng-src="{{::trustSrc(model.video_url)}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 </div>

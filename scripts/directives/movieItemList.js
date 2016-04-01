@@ -8,7 +8,10 @@ angular.module("pelisBabel").directive('movieItemList', function(){
 		 	model: "=model",
 		 	isTheUser: "&",
 		 	alquilar: "&",
-		 	desalquilar: "&"
+		 	desalquilar: "&",
+		 	gridTable: "&",
+		 	table: "=table",
+		 	notable: "=notable"
 		 	// Para pasar métodos:
 		 	//Tendré que poner el código a ejecutar cuando en la directiva yo llame al getDetailUrl
 		 }, // {} = isolate, true = child, false/undefined = no change
