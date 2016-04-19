@@ -1,0 +1,55 @@
+<div class="container" ng-controller="MoviesListController">
+    <div class="row">
+        <h1>My Movies List <button class="btn btn-info pull-right" ng-click="gridTable()">Change grid to Table</button></h1>
+    </div>
+    <div class="alert alert-danger" ng-show="uiState=='error'">
+        Error while loading data
+    </div>
+    <div class="jumbotron" ng-show="uiState=='blank'">
+        <p class="lead">There is no movies!</p>
+    </div>
+    <div ng-include="'views/ProgressBar.html'" ng-show="uiState=='loading'"></div>
+    <div class="row" ng-show="noTable=='true'">
+        <div class="col-xs-12 col-sm-6 col-md-6" ng-repeat="data in model" ng-if="isTheUser(data.create_user) == true" max-height="20px">
+            <div class="thumbnail">
+                <img ng-src="{{::data.poster_url}}" alt="">
+                <div class="caption">
+                    <h4 class="text-center">{{::data.title}}</h4>
+                    <p>
+                        {{::data.overview}}
+                    </p>
+                    <p class="text-right">
+                        <button class="btn btn-success" ng-click="verPeli(data)">Watch it!</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table table-striped" ng-show="table=='true'">
+        <thead>
+            <tr>
+                <th>Poster</th>
+                <th>Title</th>
+                <th>Overview</th>
+                <th></th>
+                <input ng-show="table=='true'" type="search" ng-model="query.title" placeholder="Search..." class="form-control">
+            </tr>
+        </thead>
+        <tr ng-repeat="data in model  | filter:query" ng-if="isTheUser(data.create_user) == true">
+            <td>
+                <img ng-src="{{::data.poster_url}}" alt="{{::data.title}}'s poster" title="{{::data.title}}">
+            </td>
+            <td>
+                {{::data.title}}
+            </td>
+            <td>
+                {{::data.overview}}
+            </td>
+            <td>
+                <button class="btn btn-success" ng-click="verPeli(data)">Watch it!</button>
+            </td>
+        </tr>
+        <tbody>
+        </tbody>
+    </table>
+</div>

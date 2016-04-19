@@ -1,0 +1,13 @@
+<div class="container" ng-controller="MoviesListController">
+    <h1>Movies List<button class="btn btn-info pull-right" ng-click="gridTable()">Change grid to Table</button></h1>
+    <div class="alert alert-danger" ng-show="uiState=='error'">
+        Error while loading data
+    </div>
+    <div class="jumbotron" ng-show="uiState=='blank'">
+        <p class="lead">There is no movies!</p>
+    </div>
+    <div ng-include="'views/ProgressBar.html'" ng-show="uiState=='loading'"></div>
+    <div class="row">
+        <movie-item-list grid-table="gridTable()" is-the-user="isTheUser(stuff)" desalquilar="desalquilar(stuff)" alquilar="alquilar(stuff)" model="model" notable="noTable" table="table" ng-show="uiState=='ideal'"></movie-item-list>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container" ng-controller="MovieDetailController">
+    <div ng-include="'views/ProgressBar.html'" ng-show="uiState=='loading'"></div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="thumbnail">
+            <img ng-src="{{::model.poster_url}}" alt="">
+            <div class="caption">
+                <h4 class="text-center">{{::model.title}}</h4>
+                <p>
+                    {{::model.overview}}
+                </p>
+            </div>
+            <video class="center-block" controls ng-src="{{::trustSrc(model.video_url)}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+ 

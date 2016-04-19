@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "title": "Deadpool",
+    "poster_url": "https://image.tmdb.org/t/p/w185/inVq3FRqcYIRl2la8iZikYYxFNR.jpg",
+    "video_url" : "http://movietrailers.apple.com/movies/wb/thelegobatmanmovie/thelegobatmanmovie-tlr2_i320.m4v",
+    "create_date": "2016/04/30",
+    "rent_date": "",
+    "create_user": "Pepe1",
+    "rent_user": "Pepe2",
+    "rating":"8",
+    "overview": "Based upon Marvel Comics’ most unconventional anti-hero, DEADPOOL tells the origin story of former Special Forces operative turned mercenary Wade Wilson, who after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life."
+}
